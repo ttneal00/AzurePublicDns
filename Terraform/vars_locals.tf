@@ -13,7 +13,7 @@ variable "environment" {
 }
 
 variable "subscription_id" {
-  default = "635a2a50-5b7c-4391-adc5-468d76cd1ce3"
+  default = "SUBSCRIPTION_ID_HERE"
 }
 
 
