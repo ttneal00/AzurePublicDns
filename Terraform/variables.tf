@@ -24,7 +24,7 @@ data "external" "me" {
 }
 
 locals {
-  dns_resource_group_name = "my-publicdns-temp"
+  dns_resource_group_name = "my-publicdns-03"
   Owner                   = lookup(data.external.me.result, "name")
   localuser               = split("@", local.Owner)
   tags = {

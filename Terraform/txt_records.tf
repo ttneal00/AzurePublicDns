@@ -68,7 +68,7 @@ locals {
       zone      = module.public_zones.all_zone_names[2]
       ttl       = 3600
     },
-# add additional TXT Records Below
+    # add additional TXT Records Below
 
   ]
 }
