@@ -4,16 +4,17 @@ locals {
 
   dnszones = [
     {
-        key = "md"
-        name                = "massivedynamics.com"
+      key  = "000"
+      name = "massivedynamics.com"
     },
     {
-      key = "uc"
-        name                = "umbrellacorp.com"
+      key  = "001"
+      name = "umbrellacorp.com"
     },
     {
-      key = "ct"
-        name                = "Initech.com"
+      key  = "002"
+      name = "Initech.com"
     },
+    # Add more dns zones as needed
   ]
 }

@@ -4,12 +4,9 @@
 
 
 locals {
-
-
-
   srv_recordsets = [
-    
-# Massive Dynamics - 0
+
+    # Massive Dynamics - 0
     {
       key       = "${module.public_zones.all_zone_names[0]}-01"
       srvrecord = "__starssip._tls.extenzaLife.com"
@@ -31,7 +28,7 @@ locals {
       ttl       = 60
     },
 
-# Umbrella Corp - 1
+    # Umbrella Corp - 1
 
     {
       key       = "${module.public_zones.all_zone_names[1]}-01"

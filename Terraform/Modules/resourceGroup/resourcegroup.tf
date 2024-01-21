@@ -1,8 +1,20 @@
+## Variables
+
+variable "location" {}
+
+variable "DnsResourceGroup" {}
+
+variable "tags" {}
+
+## Resources
+
 resource "azurerm_resource_group" "public_dns_zone" {
   name     = var.DnsResourceGroup
   location = var.location
   tags     = var.tags
 }
+
+## Outputs
 
 output "name" {
   value = azurerm_resource_group.public_dns_zone.name
