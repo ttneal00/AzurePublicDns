@@ -18,7 +18,7 @@ locals {
     # umbrellacorp.com -1
 
     {
-      key         = "${module.public_zones.all_zone_names[0]}-00"
+      key         = "${module.public_zones.all_zone_names[1]}-00"
       mxrecord    = "@"
       preferences = [100, 200]
       values      = ["usb-smtp-inbound-1.nemesis.com", "usb-smtp-inbound-2.nemesis.com"]
@@ -26,7 +26,7 @@ locals {
       ttl         = 60
     },
     {
-      key         = "${module.public_zones.all_zone_names[0]}-01"
+      key         = "${module.public_zones.all_zone_names[1]}-01"
       mxrecord    = "gh-mail"
       preferences = [113, 140]
       values      = ["mxa.hypnos.org", "mxb.hypnos.org"]
@@ -37,7 +37,7 @@ locals {
     # Initech.com - 2
 
     {
-      key         = "${module.public_zones.all_zone_names[0]}-00"
+      key         = "${module.public_zones.all_zone_names[2]}-00"
       mxrecord    = "@"
       preferences = [200, 300]
       values      = ["usb-smtp-inbound-1.Initech.com", "usb-smtp-inbound-2.Initech.com"]
