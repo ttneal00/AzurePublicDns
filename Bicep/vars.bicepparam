@@ -196,14 +196,3 @@ param srvRecords  = [
     ]
   }
 ]
-
-
-
-// key       = "${module.public_zones.all_zone_names[1]}-01"
-//       srvrecord = "_starssip._tcp.umbrellacorp.com"
-//       priority  = [100]
-//       weight    = [1]
-//       ports     = [5061]
-//       values    = ["sipfed.online.umbrellacorp.com"]
-//       zone      = module.public_zones.all_zone_names[1]
-//       ttl       = 1800
