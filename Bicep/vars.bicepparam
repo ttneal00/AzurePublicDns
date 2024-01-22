@@ -1,4 +1,7 @@
 using 'main.bicep'
+////////////
+// DNS Zones
+/////////////
 
 param dnsZones = [
   {
@@ -8,6 +11,10 @@ param dnsZones = [
     name: 'mypublicwish-2.com'
   }
 ]
+
+//////////////
+//  A REcords
+/////////////
 
 param aRecords = [
 // dnsZones[0].name = mypublicwish-1.com
@@ -36,6 +43,10 @@ param aRecords = [
   }
 ]
 
+//////////
+// CNAMES
+//////////
+
 param cNameRecords = [
 // dnsZones[0].name = mypublicwish-1.com
   {
@@ -63,8 +74,13 @@ param cNameRecords = [
   }
 ]
 
+//////////////
+// MX Records
+/////////////
+
 
 param mxRecords  = [
+  // dnsZones[0].name = mypublicwish-1.com
   {
     key: 'mx1'
     recordName: '@'
@@ -81,6 +97,7 @@ param mxRecords  = [
       }
     ]
   }
+  // dnsZones[0].name = mypublicwish-1.com
   {
     key: 'mx2'
     recordName: '@'
@@ -100,52 +117,54 @@ param mxRecords  = [
 ]
 
 
+//////////////
+// txtRecords
+//////////////
+
+
 param txtRecords  = [
+  // dnsZones[0].name = mypublicwish-1.com
   {
     key: 'txt1'
     recordName: '@'
     zoneName: dnsZones[0].name
     ttl: 60
-    values: [
+    targets: [
       {
-        txt: 'v=spf1 include:spf.protection.mumstheword.com include:usb._netblocks.mummyast.com include:nw026.com include:nw027.com include:nw028.com include:emailus.spoiledservice.com include:mg-spf.bluehermano.io include:rp.oracleemaildelivery.com ~all'
+      value: ['v=spf1 include:spf.protection.outlook.com include:usb._netblocks.mimecast.com include:nw026.com include:nw027.com include:nw028.com include:emailus.freshservice.com include:mg-spf.greenhouse.io include:rp.oracleemaildelivery.com ~all']
       }
       {
-        txt: 'ts=ms14576730'
+      value: ['uc=ucJupER9Uyg']
       }
-      {
-        txt: '5L3Y8JpfEGsMFSGlkjjljlkjH1nMrCg=='
-      }
-      {
-        txt: 'atlantis-domain-verification=CzPBnEJXm0qAjlkjkjdgmsg0y1ECIVn1liU/nufieJ7cIIbTDFD706XHTapL1ucLhKqNcf'
-      }
-      {
-        txt: 'ZOOM_verify_dhpEDCnjkljlkjMSDydf3UdDse6zw'
-      }
-      {
-        txt: 'apple-domain-verification=UwAUvcXmOXMWWqUC'
-      }
-    ]
+
+
+  ]
   }
+  // dnsZones[0].name = mypublicwish-1.com
   {
     key: 'txt2'
     recordName: '@'
     zoneName: dnsZones[1].name
-    ttl: 5
-    values: [
+    ttl: 60
+    targets: [
       {
-
-        txt: 'ts=ms14576730'
+      value: ['elppa-domain-verification=MGNcyKAUTC0rrZ']
       }
       {
-        txt: 'ts=ms14576730sample2'
+      value: ['MOOZ_verify_649uu9bgwXh7NLKibBgouYcfD5ieT']
       }
-    ]
+  ]
   }
+
 ]
+
+////////////////
+// SRV Records
+////////////////
 
 
 param srvRecords  = [
+  // dnsZones[0].name = mypublicwish-1.com
   {
     key: 'srv1'
     recordName: '_starssip._tcp.umbrellacorp.com'
@@ -174,6 +193,7 @@ param srvRecords  = [
       }
     ]
   }
+  // dnsZones[0].name = mypublicwish-1.com
   {
     key: 'srv3'
     recordName: '__starssip._tls.extenzaLife.com'

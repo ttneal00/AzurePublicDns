@@ -32,6 +32,9 @@ module aRecord 'Modules/aRecordModule.bicep' = [for record in aRecords:  {
   ipv4Address: record.ip
   ttl: record.ttl
  }
+ dependsOn: [
+  dnsZone
+ ]
 }]
 
 module cNameRecord 'Modules/cnameRecordModule.bicep' = [for record in cNameRecords:  { 
@@ -43,6 +46,9 @@ module cNameRecord 'Modules/cnameRecordModule.bicep' = [for record in cNameRecor
    target: record.target
    ttl: record.ttl
   }
+  dependsOn: [
+    dnsZone
+   ]
  }]
 
 module mxRecord 'Modules/mxRecordModule.bicep' = [for (record, index) in mxRecords: {
@@ -54,6 +60,9 @@ module mxRecord 'Modules/mxRecordModule.bicep' = [for (record, index) in mxRecor
       recordName: record.recordName
       zoneName: record.zonename
     } 
+    dependsOn: [
+      dnsZone
+     ]
 }]
 
 module txtRecord 'Modules/txtRecordModule.bicep' = [for (record, index) in txtRecords: {
@@ -61,10 +70,13 @@ module txtRecord 'Modules/txtRecordModule.bicep' = [for (record, index) in txtRe
   scope: resourceGroup(PubDnsRg.name)
   params: {
     ttl: record.ttl
-    txtRecords: record.values
+    txtRecords: record.targets
     recordName: record.recordName
     zoneName: record.zonename
   } 
+  dependsOn: [
+    dnsZone
+   ]
 }]
 
 module srvRecord 'Modules/srvRecordModule.bicep' = [for (record, index) in srvRecords: {
@@ -76,5 +88,8 @@ module srvRecord 'Modules/srvRecordModule.bicep' = [for (record, index) in srvRe
     recordName: record.recordName
     zoneName: record.zonename
   } 
+  dependsOn: [
+    dnsZone
+   ]
 }]
 

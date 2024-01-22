@@ -14,7 +14,7 @@ resource txtrecord 'Microsoft.Network/dnsZones/TXT@2023-07-01-preview' = {
   parent: zone
   properties: {
     TTL: ttl
-    TXTRecords: txtRecords
+    TXTRecords:  txtRecords
   }
 
 }
