@@ -2,8 +2,6 @@ param recordName string
 param zoneName string
 param srvRecords array
 param ttl int
-// param mxTarget string
-
 
 resource zone 'Microsoft.Network/dnsZones@2018-05-01' existing = {
   name: zoneName

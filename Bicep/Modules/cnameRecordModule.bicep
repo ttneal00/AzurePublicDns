@@ -1,6 +1,6 @@
 param recordName string
 param zoneName string
-param target string
+param cname string
 param ttl int = 3600
 
 resource zone 'Microsoft.Network/dnsZones@2018-05-01' existing = {
@@ -13,7 +13,7 @@ resource record 'Microsoft.Network/dnsZones/CNAME@2018-05-01' = {
   properties: {
     TTL: ttl
     CNAMERecord: {
-      cname: target
+      cname: cname
     }
   }
 }

@@ -52,13 +52,13 @@ param cNameRecords = [
   {
   key: 'c1'
   name: '419k0hzlooiuoj3b0lkjlkjg0w541wjjydf53txx1hjlgdk'
-  target: 'dcv1.digitallycertly.com'
+  cname: 'dcv1.digitallycertly.com'
   zoneName: dnsZones[0].name
   ttl: 60
   }
   {
   key: 'c2'
-  target: 'verify.cuboidspace.com'
+  cname: 'verify.cuboidspace.com'
   name: '790kyaq7jlulk3g98dqypd16jlkjlkb3bvgb2htmbh9'
   zoneName: dnsZones[0].name
   ttl: 60
@@ -67,7 +67,7 @@ param cNameRecords = [
   // dnsZones[1].name = mypublicwish-1.com
   {
   key: 'c3'
-  target: 'www.google.com'
+  cname: 'www.google.com'
   name: 'www'
   zoneName: dnsZones[1].name
   ttl: 60

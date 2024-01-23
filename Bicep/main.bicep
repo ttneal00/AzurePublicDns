@@ -43,7 +43,7 @@ module cNameRecord 'Modules/cnameRecordModule.bicep' = [for record in cNameRecor
   params: {
    recordName: record.name
    zoneName: record.zoneName
-   target: record.target
+   cname: record.target
    ttl: record.ttl
   }
   dependsOn: [
